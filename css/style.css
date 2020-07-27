@@ -17,3 +17,37 @@ body{
     text-align: center;
     font-size: xx-large;
 }
+.module-recherche{
+    margin-top: 15px;
+    width: 450px;
+    height: 35px;
+    background: #b8e994;
+}
+
+.button-recherche{
+    float: right;
+    height: 35px;
+    border: none;
+    background-color: #ffdd59;
+}
+.button-recherche:hover{
+    background-color: #f7e7aa;
+}
+
+.float-right{
+    height: 33px;
+    float: right;
+    border: none;
+}
+.size-large{
+    font-size: x-large;  
+}
+
+    input:focus {
+        outline:  none;
+        background-color:#dfe6e9 ;
+        
+   }
+   input:hover{
+    background-color:#dfe6e9 ;
+   }
