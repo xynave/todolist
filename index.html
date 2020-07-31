@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todolist</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+    <div class="milieu-vertical">
+        <div class="list">
+            <div class="module-titre">
+                <strong> To Do List</strong>
+            </div>
+            <div  class="module-recherche">
+                <strong  class="size-large">Put a new element :</strong> 
+                <button id="rajouter" class="button-recherche">
+                    <strong>Create</strong> 
+                </button>
+                <input type="text"  id="input"  class="float-right"  />
+            </div>
+            <ul id="list">
+                
+            </ul>
+    
+        </div> 
+    </div>
+
+
+</body>
+<script>
+
+document.getElementById("rajouter").addEventListener('click', function() {
+    
+var test='<li class="element">\
+                    <strong class="size-large">'+ document.getElementById("input").value +'</strong> \
+                    <button onclick="supprime(this)" class="float-right button-recherche2">\
+                        <img src="./asset/close.png" class="taille" alt="close">\
+                    </button>\
+                </li> ';
+    document.getElementById("list").insertAdjacentHTML("afterBegin",test );
+});
+
+function supprime(a) {
+    setTimeout(function () {
+        a.parentNode.parentNode.removeChild(a.parentNode);
+    }, 3200);
+    
+};
+
+
+
+</script>
+
+</html>

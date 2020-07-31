@@ -22,6 +22,7 @@ body{
     width: 450px;
     height: 35px;
     background: #b8e994;
+    padding-left: 5px;
 }
 
 .button-recherche{
@@ -43,11 +44,45 @@ body{
     font-size: x-large;  
 }
 
-    input:focus {
+input:focus {
         outline:  none;
         background-color:#dfe6e9 ;
         
-   }
-   input:hover{
+}
+input:hover{
     background-color:#dfe6e9 ;
-   }
+}
+li{
+    list-style: none;
+}
+.element{
+    background-color: #9980FA;
+    width: 550px;
+    height: 35px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+.taille{
+    height: 35px;
+    width: 35px;  
+}
+.taille:hover{
+    
+    transform: rotate(45deg);
+}
+
+.button-recherche2{
+    float: right;
+    height: 35px;
+    border: none;
+    background-color: #9980FA;
+}
+.button-recherche2:focus  {
+    outline:  none;
+}
+.button-recherche2:focus .taille  {
+    transition:  transform 3s;
+    transform: rotate(90deg);
+    transform: translateX(-1450%);
+}
+
