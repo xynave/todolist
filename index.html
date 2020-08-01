@@ -22,11 +22,12 @@
             <form>
                 <div class="module-recherche">
                     <button class="button-recherche" style="float:right">Create</button>
-                    <input class="float-right" id="body" type="text" required>
-                    <label class="float-right" for="body"> <strong>Text :</strong>  </label>
-                    <input class="float-right" id="title" type="text" required>
-                    <label class="float-right" for="title"> <strong>Title :</strong> </label>
+                    
+                    <label class="bor-input" for="title"> <strong>Title :</strong> </label>
+                    <input class="bor-input" id="title" type="text" required>
 
+                    <label class="bor-input" for="body"> <strong>Text :</strong>  </label>
+                    <input class="bor-input"  min="2" id="body" type="text" required>
                     
                 </div>
             </form>
@@ -137,5 +138,4 @@ var max= 32;
 
     */
 </script>
-
 </html>

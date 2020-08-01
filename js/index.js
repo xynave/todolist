@@ -125,11 +125,16 @@ window.onload = function () {
                 listItem.appendChild(deleteBtn);
                 listItem.appendChild(ValidateBtn);
                 listItem.appendChild(h3);
+                
+                
                 listItem.appendChild(para);
                 list.appendChild(listItem);
 
                 // Put the data from the cursor inside the h3 and para
                 h3.textContent = cursor.value.title;
+                h3.className = " size-large";
+                para.className = "decalage"; 
+                listItem.className="background-color-list";
                 para.textContent = cursor.value.body;
 
                 // Store the ID of the data item inside an attribute on the listItem, so we know
@@ -142,7 +147,7 @@ window.onload = function () {
 
                 // Set an event handler so that when the button is clicked, the deleteItem()
                 // function is run
-                deleteBtn.className = "float-right button-recherche2";
+                deleteBtn.className = " button-recherche2";
                 deleteBtn.innerHTML = '<img src="./asset/close.png" class="taille" alt="close">';
                 deleteBtn.onclick = deleteItem;
 
@@ -161,7 +166,7 @@ window.onload = function () {
                 // Again, if list item is empty, display a 'No notes stored' message
                 if (!list.firstChild) {
                     const listItem = document.createElement('li');
-                    listItem.textContent = 'No things to do.'
+                    listItem.textContent = 'Nothings to do.'
                     list.appendChild(listItem);
                 }
                 // if there are no more cursor items to iterate through, say so
@@ -240,13 +245,13 @@ window.onload = function () {
                 // Again, if list item is empty, display a 'No notes stored' message
                 if (!list.firstChild) {
                     const listItem = document.createElement('li');
-                    listItem.textContent = 'No notes stored.';
+                    listItem.textContent = 'Nothing to do.';
                     list.appendChild(listItem);
 
                 }
 
             };
-        }, 3200);
+        }, 2200);
 
     }
 

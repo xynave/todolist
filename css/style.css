@@ -1,7 +1,9 @@
 body{
     background-color: #4a69bd;
 }
-
+.background-color-list{
+    background-color: #9980FA;
+}
 .list{
     display: grid;
     place-items: center;
@@ -24,9 +26,10 @@ body{
     background: #b8e994;
     padding-left: 5px;
 }
-
+.decalage{
+    margin-top: 5px;
+}
 .button-recherche{
-    float: right;
     height: 35px;
     border: none;
     background-color: #ffdd59;
@@ -37,11 +40,16 @@ body{
 
 .float-right{
     height: 33px;
-   float: right;
+    border: none;
+    float: right;
+}
+.bor-input{
+    height: 33px;
     border: none;
 }
 .size-large{
-    font-size: x-large;  
+    font-size: x-large; 
+  margin-top: 5px; 
 }
 
 input:focus {
@@ -80,7 +88,6 @@ li{
     background-color: #b8e994;
 }
 .button-recherche2{
-    float: right;
     height: 35px;
     border: none;
     background-color: #9980FA;
@@ -96,6 +103,6 @@ li{
 .animate
 {
     height: 0px;
-    transition: height 3s;
+    transition: height 2s;
 }
 
