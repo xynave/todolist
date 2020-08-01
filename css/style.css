@@ -37,7 +37,7 @@ body{
 
 .float-right{
     height: 33px;
-    float: right;
+   /* float: right;*/
     border: none;
 }
 .size-large{
@@ -58,7 +58,8 @@ li{
 .element{
     background-color: #9980FA;
     width: 550px;
-    height: 35px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     padding-left: 5px;
     margin-bottom: 5px;
 }
@@ -71,6 +72,13 @@ li{
     transform: rotate(45deg);
 }
 
+.taille2{
+    height: 35px;
+    width: 35px;  
+}
+.taille2:hover{
+    background-color: #b8e994;
+}
 .button-recherche2{
     float: right;
     height: 35px;

@@ -18,43 +18,103 @@
             <div class="module-titre">
                 <strong> To Do List</strong>
             </div>
-            <div  class="module-recherche">
-                <strong  class="size-large">Put a new element :</strong> 
+            <div class="module-recherche">
+                <strong class="size-large">Put a new element :</strong>
+                
+                <input type="text" id="input" class="float-right" />
                 <button id="rajouter" class="button-recherche">
-                    <strong>Create</strong> 
+                    <strong>Create</strong>
                 </button>
-                <input type="text"  id="input"  class="float-right"  />
             </div>
             <ul id="list">
-                
+
             </ul>
-    
-        </div> 
+
+        </div>
     </div>
 
 
 </body>
 <script>
+/*var tableau = localStorage.getItem('tableau');
 
-document.getElementById("rajouter").addEventListener('click', function() {
-    
-var test='<li class="element">\
-                    <strong class="size-large">'+ document.getElementById("input").value +'</strong> \
+    if(tableau!=null){
+        for(item in tableau){
+            document.getElementById("list").insertAdjacentHTML("afterBegin", tableau[item]);
+        }
+    }
+    else{
+        tableau=['0']
+    }
+    localStorage.removeItem('tableau');
+
+       
+    if (localStorage.getItem('test') != null) {
+        var test = localStorage.getItem('test');
+        document.getElementById("list").insertAdjacentHTML("afterBegin", test);
+    }
+*/
+var max= 32;
+    document.getElementById("rajouter").addEventListener('click', function () {
+        if(document.getElementById("input").value!=""){
+            if (document.getElementById("input").value.length<max){
+                var test = '<li class="element">\
+                    <strong class="size-large">' + (document.getElementById("input").value).toLowerCase() + '</strong> \
                     <button onclick="supprime(this)" class="float-right button-recherche2">\
                         <img src="./asset/close.png" class="taille" alt="close">\
                     </button>\
+                    <button onclick="validate(this)" class="float-right button-recherche2">\
+                        <img src="./asset/case.png" class="taille2" alt="close">\
+                    </button>\
                 </li> ';
-    document.getElementById("list").insertAdjacentHTML("afterBegin",test );
-});
+                document.getElementById("input").value="";
+                // document.location="data:text/csv;base64,"+btoa("tes données");
+                // localStorage.setItem('test', test);
+                document.getElementById("list").insertAdjacentHTML("afterBegin", test);
+                // tableau.push('1');
+                // localStorage.setItem("tableau",tableau)
+            }else{
+                var test = '<li class="element">\
+                    <strong class="size-large">' + (document.getElementById("input").value.substr(0, max)).toLowerCase()  + " ..."+ '</strong> \
+                    <button onclick="supprime(this)" class="float-right button-recherche2">\
+                        <img src="./asset/close.png" class="taille" alt="close">\
+                    </button>\
+                    <button onclick="validate(this)" class="float-right button-recherche2">\
+                        <img src="./asset/case.png" class="taille2" alt="close">\
+                    </button>\
+                </li> ';
+                document.getElementById("input").value="";
+                // document.location="data:text/csv;base64,"+btoa("tes données");
+                // localStorage.setItem('test', test);
+                document.getElementById("list").insertAdjacentHTML("afterBegin", test);
+                // tableau.push('1');
+                // localStorage.setItem("tableau",tableau)
+            }
+            
+        }
+        
+        
+    });
 
-function supprime(a) {
-    setTimeout(function () {
-        a.parentNode.parentNode.removeChild(a.parentNode);
-    }, 3200);
+    function supprime(a) {
+        setTimeout(function () {
+            a.parentNode.parentNode.removeChild(a.parentNode);
+           // localStorage.removeItem('test');
+        }, 3200);
+    };
+    function validate (a){
+        var sPath = a.childNodes[1].src;  
+        var sFileName = sPath.substring(sPath.lastIndexOf("/")+1,sPath.length)
+        if (sFileName=='case.png'){
+            a.childNodes[1].src="./asset/casecheck.png";
+        }else{
+            a.childNodes[1].src="./asset/case.png";
+        }
+
+    }
+
+
     
-};
-
-
 
 </script>
 
