@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>todolist</title>
     <link rel="stylesheet" href="./css/style.css">
-
+    <script src="./js/index.js" defer></script>
 
 </head>
 
@@ -18,14 +18,21 @@
             <div class="module-titre">
                 <strong> To Do List</strong>
             </div>
-            <div class="module-recherche">
-                <strong class="size-large">Put a new element :</strong>
-                
-                <input type="text" id="input" class="float-right" />
-                <button id="rajouter" class="button-recherche">
-                    <strong>Create</strong>
-                </button>
-            </div>
+
+            <form>
+                <div class="module-recherche">
+                    <button class="button-recherche" style="float:right">Create</button>
+                    <input class="float-right" id="body" type="text" required>
+                    <label class="float-right" for="body"> <strong>Text :</strong>  </label>
+                    <input class="float-right" id="title" type="text" required>
+                    <label class="float-right" for="title"> <strong>Title :</strong> </label>
+
+                    
+                </div>
+            </form>
+
+            <br>
+            <br>
             <ul id="list">
 
             </ul>
@@ -36,7 +43,7 @@
 
 </body>
 <script>
-/*var tableau = localStorage.getItem('tableau');
+    /*var tableau = localStorage.getItem('tableau');
 
     if(tableau!=null){
         for(item in tableau){
@@ -53,12 +60,12 @@
         var test = localStorage.getItem('test');
         document.getElementById("list").insertAdjacentHTML("afterBegin", test);
     }
-*/
+
 var max= 32;
     document.getElementById("rajouter").addEventListener('click', function () {
         if(document.getElementById("input").value!=""){
-            if (document.getElementById("input").value.length<max){
-                var test = '<li class="element">\
+            if (document.getElementById("input").value.length < max){
+                var test = '<li class="element" >\
                     <strong class="size-large">' + (document.getElementById("input").value).toLowerCase() + '</strong> \
                     <button onclick="supprime(this)" class="float-right button-recherche2">\
                         <img src="./asset/close.png" class="taille" alt="close">\
@@ -74,7 +81,7 @@ var max= 32;
                 // tableau.push('1');
                 // localStorage.setItem("tableau",tableau)
             }else{
-                var test = '<li class="element">\
+                var test = '<li class="element ">\
                     <strong class="size-large">' + (document.getElementById("input").value.substr(0, max)).toLowerCase()  + " ..."+ '</strong> \
                     <button onclick="supprime(this)" class="float-right button-recherche2">\
                         <img src="./asset/close.png" class="taille" alt="close">\
@@ -96,12 +103,26 @@ var max= 32;
         
     });
 
+   /* function affiche() {
+        var test = '<li class="element onclick="affiche()" >\
+                    <strong class="size-large">' + (document.getElementById("input").value.substr(0, max)).toLowerCase()  + " ..."+ '</strong> \
+                    <button onclick="supprime(this)" class="float-right button-recherche2">\
+                        <img src="./asset/close.png" class="taille" alt="close">\
+                    </button>\
+                    <button onclick="validate(this)" class="float-right button-recherche2">\
+                        <img src="./asset/case.png" class="taille2" alt="close">\
+                    </button>\
+                </li> ';
+        document.getElementById("list").insertAdjacentHTML("afterBegin", test);
+    };
+
     function supprime(a) {
         setTimeout(function () {
-            a.parentNode.parentNode.removeChild(a.parentNode);
+            a.parentNode.parentNode.removeChild( a.parentNode);
            // localStorage.removeItem('test');
         }, 3200);
     };
+
     function validate (a){
         var sPath = a.childNodes[1].src;  
         var sFileName = sPath.substring(sPath.lastIndexOf("/")+1,sPath.length)
@@ -114,8 +135,7 @@ var max= 32;
     }
 
 
-    
-
+    */
 </script>
 
 </html>
